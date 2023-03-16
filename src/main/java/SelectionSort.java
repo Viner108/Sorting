@@ -1,4 +1,4 @@
-public class Sorting2 {
+public class SelectionSort {
     public static void main(String[] args) {
 //  1.    задаем массив lines
         int[] lines = new int[]{2,1};

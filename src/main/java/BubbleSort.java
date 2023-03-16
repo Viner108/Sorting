@@ -1,6 +1,6 @@
-public class Sorting1 {
+public class BubbleSort {
     public static void main(String[] args){
-        int[] lines = new int[]{64, 64, 73, 41, 31, 53, 16, 24, 57, 42, 74, 55, 36, 58, 75,};
+        int[] lines = new int[]{2,1};
         printLines(lines);
         boolean isSorted = false;
         while (!isSorted) {
