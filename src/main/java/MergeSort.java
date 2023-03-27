@@ -9,11 +9,17 @@ public class MergeSort {
      */
 
     public static void main(String[] args) {
-        int[] lines = new int[]{2,1,3,0};
-        System.out.println(merge(lines));
-
+        int[] lines = new int[]{320,750,800,2};
+        printLines(mergeAll(lines));
+        int[] currentSrc = new int[2];
+        currentSrc[0]=320;
+        currentSrc[1]=750;
+        int i = 0;
+        int size = 0;
+        int[] currentDest = new int[4];
+        merge(currentSrc,i,currentSrc,i+size,currentDest,i,size);
     }
-    public static int[] merge(int[] lines){
+    public static int[] mergeAll(int[] lines){
         /**Параметры:
          *  int[] temp - массив чтобы менять местами новый и исходный массив
          * int[] currentSrc - исходный массив
@@ -27,7 +33,12 @@ public class MergeSort {
         int size = 1;
         while (size < lines.length){
             for (int i = 0; i < lines.length; i+= 2*size) {
+                System.out.println("merge "+ i + ", size =" + size);
                 merge(currentSrc,i,currentSrc,i+size,currentDest,i,size);
+                System.out.println("currentSrc = ");
+                printLines(currentSrc);
+                System.out.println("currentDest = ");
+                printLines(currentDest);
             }
             temp = currentSrc;
             currentSrc = currentDest;

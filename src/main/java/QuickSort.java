@@ -8,17 +8,22 @@ public class QuickSort {
 //    4. повторяется пока во всех массивах не останется
 //    по одному элементу
     public static void main(String[] args) {
-        int[] lines = new int[]{2,1};
-
+        int[] lines = new int[]{8,5,41,7,3,1};
+      printLines(lines);
         quickSort(lines, 0, lines.length - 1);
     }
 
     private static void quickSort(int[] lines, int from, int to) {
+
         if (from < to) {
             int divideIndex = partition(lines, from, to);
+            System.out.println("quickSort 1");
+
             printLines(lines);
             quickSort(lines, from, divideIndex - 1);
+            System.out.println("quickSort 2");
             quickSort(lines, divideIndex, to);
+            System.out.println("quickSort 3");
         }
     }
 
